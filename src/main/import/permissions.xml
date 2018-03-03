@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <vault_create jcr:primaryType="jnt:permission"/>
+    <vault_delete jcr:primaryType="jnt:permission"/>
+    <vault_list jcr:primaryType="jnt:permission"/>
+    <vault_read jcr:primaryType="jnt:permission"/>
+    <vault_root jcr:primaryType="jnt:permission"/>
+    <vault_sudo jcr:primaryType="jnt:permission"/>
+    <vault_update jcr:primaryType="jnt:permission"/>
+</permissions>

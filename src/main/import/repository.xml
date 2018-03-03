@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <modules jcr:primaryType="jnt:modules">
+        <external-provider-vault j:dependencies="default external-provider ldap"
+                                 j:modulePriority="0"
+                                 j:moduleType="system"
+                                 j:title="Vault Hashicorp"
+                                 jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                                 jcr:primaryType="jnt:module">
+            <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                         jcr:primaryType="jnt:moduleVersionFolder"
+                         j:staticMountPointProviderKey="module-external-provider-vault-1.0-SNAPSHOT">
+                <src jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                         jcr:primaryType="jnt:folder">
+                    <main jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                              jcr:primaryType="jnt:folder">
+                        <resources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                                       jcr:primaryType="jnt:folder">
+                            <META-INF jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                                          jcr:primaryType="jnt:metaInfFolder">
+                                <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
+                            </META-INF>
+                            <icons jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                                       jcr:primaryType="jnt:folder"/>
+                        </resources>
+                    </main>
+                </src>
+            </sources>
+                
+            <portlets jcr:primaryType="jnt:portletFolder"/>
+            <files jcr:primaryType="jnt:folder"/>
+            <contents jcr:primaryType="jnt:contentFolder">
+                <vault-mount-point-factory j:mountPointType="jvep:vaultMountPoint"
+                                               j:templateName="vault-factory"
+                                               jcr:primaryType="jvep:vaultMountPointFactoryPage">
+                    <j:translation_en jcr:language="en"
+                                          jcr:mixinTypes="mix:title"
+                                          jcr:primaryType="jnt:translation"
+                                          jcr:title="vault hashicorp mount point factory"/>
+                </vault-mount-point-factory>
+            </contents>                
+        </external-provider-vault>
+    </modules>
+</content>

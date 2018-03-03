@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    ==========================================================================================
+    =                            JAHIA'S ENTERPRISE DISTRIBUTION                             =
+    ==========================================================================================
+
+                                     http://www.jahia.com
+
+    JAHIA'S ENTERPRISE DISTRIBUTIONS LICENSING - IMPORTANT INFORMATION
+    ==========================================================================================
+
+        Copyright (C) 2002-2016 Jahia Solutions Group. All rights reserved.
+
+        This file is part of a Jahia's Enterprise Distribution.
+
+        Jahia's Enterprise Distributions must be used in accordance with the terms
+        contained in the Jahia Solutions Group Terms & Conditions as well as
+        the Jahia Sustainable Enterprise License (JSEL).
+
+        For questions regarding licensing, support, production usage...
+        please contact our team at sales@jahia.com or go to http://www.jahia.com/license.
+
+    ==========================================================================================
+
+-->
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jahia.modules</groupId>
+        <artifactId>jahia-modules</artifactId>
+        <version>7.2.1.1</version>
+    </parent>
+    <groupId>org.jahia.modules</groupId>
+    <artifactId>external-provider-vault</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>Jahia Vault External Provider</name>
+    <description>This is a custom module to interface Vault Hashicorp with DX.</description>
+    <distributionManagement>
+        <repository>
+            <id>jahia-enterprise-releases</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-enterprise-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>jahia-enterprise-snapshots</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-enterprise-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <properties>
+        <export-package>org.jahia.modules.vault.provider,org.jahia.modules.vault.provider.factory</export-package>
+        <import-package>atg.taglib.json.*</import-package>
+        <!--<jahia-module-type>system</jahia-module-type>-->
+        <jahia-depends>default,external-provider,ldap</jahia-depends>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jahia.modules</groupId>
+            <artifactId>external-provider</artifactId>
+            <version>3.1.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.bettercloud</groupId>
+            <artifactId>vault-java-driver</artifactId>
+            <version>3.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>atg.taglib.json</groupId>
+            <artifactId>json-taglib</artifactId>
+            <version>0.4.1</version>
+            <!--<scope>provided</scope>-->
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-el</artifactId>
+                    <groupId>commons-el</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jahia-public</id>
+            <name>Jahia Public Repository</name>
+            <url>https://devtools.jahia.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions />
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
