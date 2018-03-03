@@ -21,13 +21,7 @@
                        value="org.jahia.modules.vault.provider.MountPointAvailabilityValidator" />
             </map>
         </property>
-    </bean>
-    
-    <!--    <bean id="vauthAuthValve" class="org.jahia.modules.vault.valve.VaultAuthValveImpl">
-        <property name="jcrStoreService" ref="JCRStoreService"/>
-        <property name="positionBefore" value="SessionAuthValve"/>
-    </bean>-->
-    
+    </bean>    
     
     <bean id="vaultApplicationListener" class="org.jahia.modules.vault.listeners.VaultApplicationListener">
         <property name="jcrStoreService" ref="JCRStoreService"/>

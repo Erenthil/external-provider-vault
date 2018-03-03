@@ -63,8 +63,6 @@ public class VaultApplicationListener implements ApplicationListener<Application
                                 final Cookie vaultUserTokenCookie = new Cookie(VaultDataSource.ATTR_VAULT_TOKEN, userToken);
                                 vaultUserTokenCookie.setPath("/");
                                 vaultUserTokenCookie.setMaxAge(-1);
-//                                final JCRSessionWrapper sessionWrapper = JCRSessionFactory.getInstance().getCurrentUserSession(Constants.EDIT_WORKSPACE, Locale.ENGLISH, null);
-//                                sessionWrapper.setAttribute(VaultDataSource.ATTR_VAULT_TOKEN, userToken);
                                 authContext.getResponse().addCookie(vaultUserTokenCookie);
                             }
                         }
